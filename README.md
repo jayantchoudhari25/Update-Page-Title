@@ -1,16 +1,58 @@
-# React + Vite
+# 🧠 Dynamic Page Title App (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to use **React Hooks** — specifically `useState` and `useEffect` — to dynamically update the **browser tab title** based on user input in real time.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 📝 Updates the document (tab) title as you type your name  
+- 🎨 Simple and clean user interface  
+- ⚡ Built with **React + Vite** for fast development  
+- 🪄 Demonstrates the concept of **side effects** using `useEffect`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Project Flow / Logic
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Initialize State**  
+   - The `name` state is declared using `useState("")`.
+
+2. **Handle Input Changes**  
+   - When the user types in the input field, `setName()` updates the `name` value.
+
+3. **Update Page Title Dynamically**  
+   - `useEffect()` listens for changes in `name` and updates the browser tab title:
+     ```js
+     useEffect(() => {
+       document.title = name ? `Hello ${name}` : 'Please enter your name'
+     }, [name])
+     ```
+
+4. **Dependency Array `[name]`**  
+   - Ensures the effect runs **only** when `name` changes.
+
+---
+
+## 🧰 Technologies Used
+
+- ⚛️ **React 18+**
+- ⚡ **Vite**
+- 💅 **CSS** for basic styling
+
+---
+
+## 📂 Project Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/<yourusername>/DynamicPageTitle.git
+
+# Navigate to the project folder
+cd DynamicPageTitle
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev

@@ -13,17 +13,23 @@ function App() {
   }, [name])
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Dynamic Page Title</h2>
-      <input type="text"
-        value={name}
-        placeholder='Enter your name'
-        onChange={(e) => setName(e.target.value)}
+    <>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <h2 className="page-title">Dynamic Page Title</h2>
+        <input type="text"
+          value={name}
+          placeholder='Enter your name'
+          onChange={(e) => setName(e.target.value)}
           style={{ padding: "10px", fontSize: "1.2em" }}
         />
-        <button onClick={() => setName('')}
+        <button className='btn-reset' onClick={() => setName('')}
           style={{ padding: "10px", fontSize: "1.2em", marginLeft: "10px" }}>Reset</button>
-    </div>
+      </div>
+      <div>
+      <h4 style={{textAlign: "center", marginTop: "20px", fontStyle: "italic"  }}>Type your name in the above box to see it in the browser tab</h4>
+      </div>
+
+    </>
   )
 }
 
